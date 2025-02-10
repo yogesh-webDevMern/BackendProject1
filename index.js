@@ -14,6 +14,31 @@ app.get("/",function(req,res)
     }
   )
 })
+app.get("/file/:filename",function(req,res)
+{
+   fs.readFile(`./files/${req.params.filename}`,'utf-8',function(err,filedata)
+{
+    res.render('show',{filename:req.params.filename,filedata:filedata});
+})
+})
+app.get("/edit/:filename",function(req,res)
+{
+res.render("edit",{filename:req.params.filename});
+})
+app.get("/delete/:filename",function(req,res)
+{
+fs.unlink(`./files/${req.params.filename}`,(err)=>
+{
+res.redirect("/");
+});
+})
+app.post("/edit",function(req,res) 
+{
+fs.rename(`./files/${req.body.Previous}`,`./files/${req.body.newname}`,(err)=>
+{
+ res.redirect("/");
+})
+})
 app.post("/submit",(req,res)=>
 {
     fs.writeFile(`./files/${req.body.task.split(" ").join("")}.txt`,req.body.details,function(err)

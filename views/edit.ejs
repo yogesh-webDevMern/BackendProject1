@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="main bg-zinc-800 max-w-[100%] min-h-screen text-white p-10">
+
+        <div class="detail-box md:w-[25%] w-[50%] bg-zinc-800 p-5">
+            <a href="/" class="text-blue-600">Go back to Home</a>
+            <form action="/edit" method="post">
+                <div class="form-box p-10 text-white">
+                    <input type="text" class="bg-zinc-900 rounded-md w-[100%] py-2 outline-none text-white px-5 text-zinc-400" name="Previous" placeholder="Previous name" readonly value=<%= filename   %>>
+                    <input type="text" class="bg-zinc-900 rounded-md w-[100%] py-2 outline-none text-white px-5 mt-4" name="newname" placeholder="New name">
+            <button class="bg-yellow-500 md:px-4 px-2 py-1 md:text-[16px] text-[14px] duration-300 rounded mt-4">Update Name</button>
+                </div>
+              </form>
+            </p>
+         </div>
+    </div>
+</body>
+</html>
